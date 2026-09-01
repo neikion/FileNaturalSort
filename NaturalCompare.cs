@@ -60,7 +60,7 @@ namespace NaturalOrdering
         {
             if (x == null || y == null)
             {
-                return string.Compare(x, y, StringComparison.Ordinal);
+                return string.Compare(x, y, _comparison);
             }
             var xseg = new StringSegment(x);
             var yseg = new StringSegment(y);
@@ -87,7 +87,7 @@ namespace NaturalOrdering
                             break;
 
                         case StringSegmentResult.Chara:
-                            int result = xseg.GetPart.CompareTo(yseg.GetPart, StringComparison.Ordinal);
+                            int result = xseg.GetPart.CompareTo(yseg.GetPart, _comparison);
                             if (result != 0) return result;
                             break;
 
